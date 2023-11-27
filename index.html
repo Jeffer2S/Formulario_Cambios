@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Solicitud de Cambio</title>
+<link rel="stylesheet" href="./index.css">
+</head>
+<body>
+
+    <form>
+        <h2>Solicitud de Cambio</h2>
+
+        <label for="nombre">Nombre del solicitante:</label>
+        <input type="text" id="nombre" name="nombre" required>
+
+        <label for="cargo">Cargo o rol:</label>
+        <input type="text" id="cargo" name="cargo" required>
+
+        <label for="descripcion">Descripción del cambio:</label>
+        <textarea id="descripcion" name="descripcion" rows="4" required></textarea>
+
+        <label for="impacto">Impacto en el proyecto:</label>
+        <textarea id="impacto" name="impacto" rows="4" required></textarea>
+
+        <label for="fecha">Fecha propuesta:</label>
+        <input type="date" id="fecha" name="fecha" required>
+
+        <label for="costo">Costos asociados:</label>
+        <input type="text" id="costo" name="costo">
+
+        <label for="riesgos">Riesgos asociados:</label>
+        <textarea id="riesgos" name="riesgos" rows="4"></textarea>
+
+        <label for="requisitos">Requisitos técnicos:</label>
+        <textarea id="requisitos" name="requisitos" rows="4"></textarea>
+
+        <label for="validacion">Procedimientos de validación:</label>
+        <textarea id="validacion" name="validacion" rows="4"></textarea>
+
+        <label for="observaciones">Observaciones adicionales:</label>
+        <textarea id="observaciones" name="observaciones" rows="4"></textarea>
+
+        <label for="archivo">Adjuntar archivo:</label>
+        <input type="file" id="archivo" name="archivo">
+
+        <button type="submit">Enviar Solicitud</button>
+    </form>
+
+</body>
+</html>
