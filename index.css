@@ -47,9 +47,16 @@ button:hover {
 h2{
     text-align: center;
     font-family: Arial, Helvetica, sans-serif;
-    color: rgb(125, 125, 185);
+    color: rgb(50, 50, 189);
 }
 
-button a{
-    background-color: red;
+.form-group {
+    display: inline-block;  
+}
+
+.form-group label{
+    display: block;
+    width: 44em; /* Ancho del label (ajustable) */
+    text-align: left;
+    
 }
