@@ -67,6 +67,24 @@
         <label for="recursos_n">Recursos Necesarios:</label>
         <textarea id="recursos_n" name="recursos_n" rows="6" required></textarea>
 
+        <label for="estado_solicitud">Estado del Cambio Solicitado:</label>
+        <select name="estado_solicitud" id="estado_solicitud" required class="styled-select">
+            <option value="pendiente">Pendiente</option>
+            <option value="en_proceso">En Proceso</option>
+            <option value="aprobado">Aprobado</option>
+            <option value="rechazado">Rechazado</option>
+            <option value="implementado">Implementado</option>
+        </select> 
+        <label for="responsable">Responsable de la Solicitud:</label>
+        <input type="text" id="responsable" name="responsable" onkeypress="soloLetras(event)">
+            
+        <label for="comentarios">Observaciones y Comentarios:</label>
+        <textarea id="comentarios" name="comentarios" rows="5"></textarea>
+
+
+
+
+
         <label for="fecha">Fecha propuesta:</label>
         <input type="date" id="fecha" name="fecha" required>
             <label for="costo">Costos asociados:</label>
@@ -88,4 +106,33 @@
         </form>
 
     </body>
+
+    <script>
+        function soloLetras(event) {
+            var input = event.key;
+            var regex = /^[a-zA-Z\sñáéíóúÁÉÍÓÚ]+$/;
+            if (!regex.test(input)) {
+                event.preventDefault();
+            }
+        }
+
+        var input = document.getElementById('responsable');
+
+        input.addEventListener('input', function() {
+            var textoIngresado = input.value;
+            var newTexto = '';
+
+            for (var i = 0; i < textoIngresado.length; i++) {
+                if (textoIngresado[i] === ' ') {
+                    if (i === textoIngresado.length - 1 || textoIngresado[i + 1] !== ' ') {
+                        newTexto += textoIngresado[i];
+                    }
+                } else {
+                    newTexto += textoIngresado[i];
+                }
+            }
+
+            input.value = newTexto;
+        });
+    </script>
 </html>
