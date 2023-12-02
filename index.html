@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Solicitud de Cambio</title>
-<link rel="stylesheet" href="./index.css">
+    <link rel="stylesheet" href="./index.css">
 </head>
+
 <body>
 
     <form>
@@ -22,6 +24,18 @@
 
         <label for="impacto">Impacto en el proyecto:</label>
         <textarea id="impacto" name="impacto" rows="4" required></textarea>
+
+        <label for="prioridad">Prioridad:</label>
+        <div>
+            <button style="background-color: rgb(235, 22, 22); color: black;" type="button" id="alta"
+                value="Alta">Alta</button>
+            <button style="background-color: yellow; color: black;" type="button" id="media"
+                value="Media">Media</button>
+            <button style="background-color: green; color: black;" type="button" id="baja" value="Baja">Baja</button>
+        </div>
+
+        <label for="recursos_n">Recursos Necesarios:</label>
+        <textarea id="recursos_n" name="recursos_n" rows="6" required></textarea>
 
         <label for="fecha">Fecha propuesta:</label>
         <input type="date" id="fecha" name="fecha" required>
@@ -48,4 +62,5 @@
     </form>
 
 </body>
+
 </html>

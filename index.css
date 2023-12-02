@@ -1,13 +1,13 @@
 body {
     font-family: Arial, sans-serif;
-    background-color: rgba(234, 131, 131, 0.575);
+    background-color: rgba(255, 255, 255, 0.575);
     margin: 5 px;
     padding: 5 px;
     height: 100vh;
 }
 
 form {
-    background-color: rgb(145, 235, 171);
+    background-color: rgb(141, 196, 196);
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
@@ -28,11 +28,11 @@ input, textarea {
     box-sizing: border-box;
     border: none;
     border-radius: 4px;
-    background-color: rgba(234, 243, 243, 0.984);
+    background-color: rgba(255, 255, 255, 0.984)
 }
 
 button {
-    background-color: #4caf50;
+    background-color: #208d23;
     color: #fff;
     padding: 10px 15px;
     border: none;
@@ -41,11 +41,15 @@ button {
 }
 
 button:hover {
-    background-color: #45a049;
+    background-color: #000000;
 }
 
 h2{
     text-align: center;
     font-family: Arial, Helvetica, sans-serif;
-    color: rgb(50, 50, 189);
+    color: rgb(125, 125, 185);
+}
+
+button a{
+    background-color: red;
 }
