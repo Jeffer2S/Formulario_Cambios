@@ -49,3 +49,14 @@ h2{
     font-family: Arial, Helvetica, sans-serif;
     color: rgb(50, 50, 189);
 }
+
+.form-group {
+    display: inline-block;  
+}
+
+.form-group label{
+    display: block;
+    width: 44em; /* Ancho del label (ajustable) */
+    text-align: left;
+    
+}

@@ -1,51 +1,64 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Solicitud de Cambio</title>
-<link rel="stylesheet" href="./index.css">
-</head>
-<body>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Solicitud de Cambio</title>
+        <link rel="stylesheet" href="./index.css">
+    </head>
+    <body>
 
-    <form>
-        <h2>Solicitud de Cambio</h2>
+        <form action="procesar_solicitud.php" method="post">
+            <h2>Solicitud de Cambio</h2>
 
-        <label for="nombre">Nombre del solicitante:</label>
-        <input type="text" id="nombre" name="nombre" required>
+            <label for="titulo_proye">Titulo del Proyecto:</label>
+            <input type="titulo_proye" id="titulo_proye" name="titulo_proye"
+                required>
 
-        <label for="cargo">Cargo o rol:</label>
-        <input type="text" id="cargo" name="cargo" required>
+                <div class="form-group">
+                    <label for="titulo_soli">Título de la Solicitud:</label>
+                    <input type="text" id="titulo_soli" name="titulo_soli" required>
+                </div>
+            
+                <div class="form-group">
+                    <label for="nro_soli">Nro de Solicitud:</label>
+                    <input type="text" id="nro_soli" name="nro_soli" required>
+                </div>
+                <br></br>
+            <div class="form-group">
+                <label for="nombre_soli">Nombre del solicitante:</label>
+                <input type="text" id="nombre_soli" name="nombre_soli" required>
+            </div>
 
-        <label for="descripcion">Descripción del cambio:</label>
-        <textarea id="descripcion" name="descripcion" rows="4" required></textarea>
+            <div class="form-group">
+                <label for="cargo">Cargo o Rol:</label>
+                <input type="text" id="cargo" name="cargo" required>
+            </div>
 
-        <label for="impacto">Impacto en el proyecto:</label>
-        <textarea id="impacto" name="impacto" rows="4" required></textarea>
+            <label for="descripcion">Descripción del cambio:</label>
+            <textarea id="descripcion" name="descripcion" rows="4" required></textarea>
+            <label for="impacto">Impacto en el proyecto:</label>
+            <textarea id="impacto" name="impacto" rows="4" required></textarea>
+            <label for="fecha">Fecha propuesta:</label>
+            <input type="date" id="fecha" name="fecha" required>
 
-        <label for="fecha">Fecha propuesta:</label>
-        <input type="date" id="fecha" name="fecha" required>
+            <label for="costo">Costos asociados:</label>
+            <input type="text" id="costo" name="costo">
 
-        <label for="costo">Costos asociados:</label>
-        <input type="text" id="costo" name="costo">
+            <label for="riesgos">Riesgos asociados:</label>
+            <textarea id="riesgos" name="riesgos" rows="4"></textarea>
 
-        <label for="riesgos">Riesgos asociados:</label>
-        <textarea id="riesgos" name="riesgos" rows="4"></textarea>
+            <label for="requisitos">Requisitos técnicos:</label>
+            <textarea id="requisitos" name="requisitos" rows="4"></textarea>
+            <label for="validacion">Procedimientos de validación:</label>
+            <textarea id="validacion" name="validacion" rows="4"></textarea>
+            <label for="observaciones">Observaciones adicionales:</label>
+            <textarea id="observaciones" name="observaciones" rows="4"></textarea>
+            <label for="archivo">Adjuntar archivo:</label>
+            <input type="file" id="archivo" name="archivo">
 
-        <label for="requisitos">Requisitos técnicos:</label>
-        <textarea id="requisitos" name="requisitos" rows="4"></textarea>
+            <button type="submit">Enviar Solicitud</button>
+        </form>
 
-        <label for="validacion">Procedimientos de validación:</label>
-        <textarea id="validacion" name="validacion" rows="4"></textarea>
-
-        <label for="observaciones">Observaciones adicionales:</label>
-        <textarea id="observaciones" name="observaciones" rows="4"></textarea>
-
-        <label for="archivo">Adjuntar archivo:</label>
-        <input type="file" id="archivo" name="archivo">
-
-        <button type="submit">Enviar Solicitud</button>
-    </form>
-
-</body>
+    </body>
 </html>
