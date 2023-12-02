@@ -60,3 +60,20 @@ h2{
     text-align: left;
     
 }
+
+.jf {
+    width: auto;
+    height: auto;
+    margin: 0 0 0 0;
+    border-radius: 5px;
+  }
+  
+  .jf > p {
+    padding-right: 15px;
+    font-family: "Inconsolata", monospace;
+    font-family: "Nunito", sans-serif;
+    font-family: "Open Sans", sans-serif;
+    font-size: 15px;
+    font-weight: 300;
+  }
+  
