@@ -9,7 +9,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $servername = "localhost";
     $username = "root";
     $password = "";
-    $dbname = "formulariocambios";
+    $dbname = "formulario";
 
     // Crear la conexión
     $conn = new mysqli($servername, $username, $password, $dbname);
@@ -25,7 +25,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $cargo = mysqli_real_escape_string($conn, $cargo);
 
         // Insertar datos en la tabla 'formularios' con sentencia preparada
-        $sql = "INSERT INTO formularios (tit_pro, tit_soli, nom_soli, car_soli) 
+        $sql = "INSERT INTO datos_formulario (tit_pro, tit_soli, nom_soli, car_soli) 
                 VALUES (?, ?, ?, ?)";
 
         $stmt = $conn->prepare($sql);
