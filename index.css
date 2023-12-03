@@ -149,4 +149,16 @@ header {
     padding: 12px 0;
     font-size:medium; 
   }
-  
+
+  .mensaje-bienvenida {
+    background-color: #f7f7f7;
+    border: 1px solid #ddd;
+    padding: 30px;
+    text-align: center;
+    margin-top: 50px;
+    border-radius: 12px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    color: rgb(0, 0, 0);
+    line-height: 1.6;
+}

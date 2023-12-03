@@ -16,13 +16,19 @@
 
     <nav class="navbar">
         <ul>
-          <li><a href="#">Inicio</a></li>
-          <li><a href="#">Crear Nuevo Formulario</a></li>
-          <li><a href="#">Modificar Formulario</a></li>
-          <li><a href="#">Eliminar Formulario</a></li>
+            <li><a href="./index.html">Inicio</a></li>
+            <li><a href="#" id="crearFormulario">Crear Nuevo Formulario</a></li>
+            <li><a href="#">Modificar Formulario</a></li>
+            <li><a href="#">Eliminar Formulario</a></li>
         </ul>
-      </nav>
+    </nav>
 
+      <div id="mensajeBienvenida" style="display: block;"class="mensaje-bienvenida">
+        <h1>¡Bienvenido a nuestra plataforma de solicitud de cambios! Comienza a gestionar tus solicitudes de modificación de manera eficiente y organizada.</h1>
+    </div>
+    <br></br>
+
+    <div id="formulario-container" style="display: none;">
     <form action="procesar_solicitud.php" method="post">
         <h2>Solicitud de Cambio</h2>
 
@@ -94,6 +100,7 @@
 
         <button type="submit">Enviar Solicitud</button>
     </form>
+</div>
 
 <footer class="footer">
   <p>Todos los derechos reservados © Grupo Nro 3</p>
@@ -128,6 +135,28 @@
 
         input.value = newTexto;
     });
+    
 </script>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const opcionCrear = document.getElementById('crearFormulario');
+        const formularioContainer = document.getElementById('formulario-container');
+        const mensajeBienvenida = document.getElementById('mensajeBienvenida');
+
+        opcionCrear.addEventListener('click', function (event) {
+            event.preventDefault();
+            formularioContainer.style.display = 'block';
+            mensajeBienvenida.style.display = 'none';
+        });
+
+        // Mostrar mensaje de bienvenida al inicio
+        formularioContainer.style.display = 'none';
+        mensajeBienvenida.style.display = 'block';
+    });
+</script>
+
+
+
 
 </html>
