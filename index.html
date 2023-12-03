@@ -1,117 +1,116 @@
 <!DOCTYPE html>
 <html lang="es">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Solicitud de Cambio</title>
-        <link rel="stylesheet" href="./index.css">
-    </head>
-    <body>
 
-        <form action="procesar_solicitud.php" method="post">
-            <h2>Solicitud de Cambio</h2>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Solicitud de Cambio</title>
+    <link rel="stylesheet" href="./index.css">
+</head>
 
-            <label for="titulo_proye">Titulo del Proyecto:</label>
-            <input type="titulo_proye" id="titulo_proye" name="titulo_proye"
-                required>
+<body>
 
-                <div class="form-group">
-                    <label for="titulo_soli">Título de la Solicitud:</label>
-                    <input type="text" id="titulo_soli" name="titulo_soli" required>
-                </div>
-            
-                <div class="form-group">
-                    <label for="nro_soli">Nro de Solicitud:</label>
-                    <input type="text" id="nro_soli" name="nro_soli" required>
-                </div>
-                <br></br>
-            <div class="form-group">
-                <label for="nombre_soli">Nombre del solicitante:</label>
-                <input type="text" id="nombre_soli" name="nombre_soli" required>
-            </div>
+    <form action="procesar_solicitud.php" method="post">
+        <h2>Solicitud de Cambio</h2>
 
-            <div class="form-group">
-                <label for="cargo">Cargo o Rol:</label>
-                <input type="text" id="cargo" name="cargo" required>
-            </div>
+        <label for="titulo_proye">Titulo del Proyecto:</label>
+        <input type="titulo_proye" id="titulo_proye" name="titulo_proye" required>
 
-            <div class="descripcion jf">
-                <p>Descripción del cambio:</p>
-                <input type="text" id="descripcion" name="descripcion" required>
-            </div>
-            <div class="justificacion jf">
-                <p>Justificación del cambio:</p>
-                <input type="text" id="justificacion" name="justificacion" required>
-            </div>
-            <div class="impacto jf">
-                <p>Impacto que tendra:</p>
-                <input type="text" id="impacto" name="impacto" required>
-            </div>
+        <div class="form-group">
+            <label for="titulo_soli">Título de la Solicitud:</label>
+            <input type="text" id="titulo_soli" name="titulo_soli" required>
+        </div>
 
-            <label for="descripcion">Descripción del cambio:</label>
-            <textarea id="descripcion" name="descripcion" rows="4" required></textarea>
-            <label for="impacto">Impacto en el proyecto:</label>
-            <textarea id="impacto" name="impacto" rows="4" required></textarea>
-            <label for="fecha">Fecha propuesta:</label>
-            <input type="date" id="fecha" name="fecha" required>
+        <div class="form-group">
+            <label for="nro_soli">Nro de Solicitud:</label>
+            <input type="text" id="nro_soli" name="nro_soli" required>
+        </div>
+        <br></br>
+        <div class="form-group">
+            <label for="nombre_soli">Nombre del solicitante:</label>
+            <input type="text" id="nombre_soli" name="nombre_soli" required>
+        </div>
 
-            <label for="prioridad">Prioridad:</label>
-            <div>
-                <button style="background-color: rgb(235, 22, 22); color: black;" type="button" id="alta"
-                    value="Alta">Alta</button>
-                <button style="background-color: yellow; color: black;" type="button" id="media"
-                    value="Media">Media</button>
-                <button style="background-color: green; color: black;" type="button" id="baja" value="Baja">Baja</button>
-            </div>
+        <div class="form-group">
+            <label for="cargo">Cargo o Rol:</label>
+            <input type="text" id="cargo" name="cargo" required>
+        </div>
 
-            <label for="recursos_n">Recursos Necesarios:</label>
-            <textarea id="recursos_n" name="recursos_n" rows="6" required></textarea>
+        <div class="descripcion jf">
+            <p>Descripción del cambio:</p>
+            <input type="text" id="descripcion" name="descripcion" required>
+        </div>
+        <div class="justificacion jf">
+            <p>Justificación del cambio:</p>
+            <input type="text" id="justificacion" name="justificacion" required>
+        </div>
+        <div class="impacto jf">
+            <p>Impacto que tendra:</p>
+            <input type="text" id="impacto" name="impacto" required>
+        </div>
 
-            <label for="estado_solicitud">Estado del Cambio Solicitado:</label>
-            <select name="estado_solicitud" id="estado_solicitud" required class="styled-select">
-                <option value="pendiente">Pendiente</option>
-                <option value="en_proceso">En Proceso</option>
-                <option value="aprobado">Aprobado</option>
-                <option value="rechazado">Rechazado</option>
-                <option value="implementado">Implementado</option>
-            </select> 
-            <label for="responsable">Responsable de la Solicitud:</label>
-            <input type="text" id="responsable" name="responsable" onkeypress="soloLetras(event)">
-                
-            <label for="comentarios">Observaciones y Comentarios:</label>
-            <textarea id="comentarios" name="comentarios" rows="5"></textarea>
+        <label for="prioridad">Prioridad:</label>
 
-            <button type="submit">Enviar Solicitud</button>
-        </form>
+        <div>
+            <select name="prioridad" id="prioridad" required class="styled-select">
+                <option value="Alta" style="background-color: rgb(202, 26, 26); ">Alta</option>
+                <option value="Media" style="background-color: rgb(165, 87, 42); ">Media</option>
+                <option value="Baja" style="background-color: rgb(42, 165, 69); ">Baja</option>
+            </select>
+        </div>
 
-    </body>
+        <label for="recursos_n">Recursos Necesarios:</label>
+        <textarea id="recursos_n" name="recursos_n" rows="6" required ></textarea>
 
-    <script>
-        function soloLetras(event) {
-            var input = event.key;
-            var regex = /^[a-zA-Z\sñáéíóúÁÉÍÓÚ]+$/;
-            if (!regex.test(input)) {
-                event.preventDefault();
+        <label for="fecha">Fecha propuesta:</label>
+        <input type="date" id="fecha" name="fecha" required>
+
+        <label for="estado_solicitud">Estado del Cambio Solicitado:</label>
+        <select name="estado_solicitud" id="estado_solicitud" required class="styled-select">
+            <option value="pendiente">Pendiente</option>
+            <option value="en proceso">En Proceso</option>
+            <option value="aprobado">Aprobado</option>
+            <option value="rechazado">Rechazado</option>
+            <option value="implementado">Implementado</option>
+        </select>
+        <label for="responsable">Responsable de la Solicitud:</label>
+        <input type="text" id="responsable" name="responsable" onkeypress="soloLetras(event)" required>
+
+        <label for="comentarios">Observaciones y Comentarios:</label>
+        <textarea id="comentarios" name="comentarios" rows="5" required></textarea>
+
+        <button type="submit">Enviar Solicitud</button>
+    </form>
+
+</body>
+
+<script>
+    function soloLetras(event) {
+        var input = event.key;
+        var regex = /^[a-zA-Z\sñáéíóúÁÉÍÓÚ]+$/;
+        if (!regex.test(input)) {
+            event.preventDefault();
+        }
+    }
+
+    var input = document.getElementById('responsable');
+
+    input.addEventListener('input', function () {
+        var textoIngresado = input.value;
+        var newTexto = '';
+
+        for (var i = 0; i < textoIngresado.length; i++) {
+            if (textoIngresado[i] === ' ') {
+                if (i === textoIngresado.length - 1 || textoIngresado[i + 1] !== ' ') {
+                    newTexto += textoIngresado[i];
+                }
+            } else {
+                newTexto += textoIngresado[i];
             }
         }
 
-        var input = document.getElementById('responsable');
+        input.value = newTexto;
+    });
+</script>
 
-        input.addEventListener('input', function() {
-            var textoIngresado = input.value;
-            var newTexto = '';
-
-            for (var i = 0; i < textoIngresado.length; i++) {
-                if (textoIngresado[i] === ' ') {
-                    if (i === textoIngresado.length - 1 || textoIngresado[i + 1] !== ' ') {
-                        newTexto += textoIngresado[i];
-                    }
-                } else {
-                    newTexto += textoIngresado[i];
-                }
-            }
-
-            input.value = newTexto;
-        });
-    </script>
 </html>

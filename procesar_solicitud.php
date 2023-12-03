@@ -1,50 +1,35 @@
 <?php
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $titulo_proye = $_POST["titulo_proye"];
-    $titulo_soli = $_POST["titulo_soli"];
-    $nombre_soli = $_POST["nombre_soli"];
-    $cargo = $_POST["cargo"];
 
-    // Conexión a la base de datos
-    $servername = "localhost";
-    $username = "root";
-    $password = "";
-    $dbname = "formulario";
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    require 'conexion.php';
+    $conexion = new Conexion("localhost", "root", "", "formulario");
+    $conexion->conectar();
+    $conn = $conexion->obtenerConexion();
 
-    // Crear la conexión
-    $conn = new mysqli($servername, $username, $password, $dbname);
+    if (isset($_POST['titulo_proye']) && isset($_POST['titulo_soli']) && isset($_POST['nro_soli']) && isset($_POST['nombre_soli']) &&       isset($_POST['cargo']) && isset($_POST['descripcion']) && isset($_POST['justificacion']) && isset($_POST['impacto']) && isset($_POST['estado_solicitud']) && isset($_POST['responsable']) && isset($_POST['comentarios']) && isset($_POST['prioridad']) && isset($_POST['recursos_n']) && isset($_POST['fecha'])) {
 
-    // Verificar la conexión
-    if ($conn->connect_error) {
-        die("Error de conexión: " . $conn->connect_error);
-    } else {
-        // Sanitizar los datos (evitar inyección de SQL)
-        $titulo_proye = mysqli_real_escape_string($conn, $titulo_proye);
-        $titulo_soli = mysqli_real_escape_string($conn, $titulo_soli);
-        $nombre_soli = mysqli_real_escape_string($conn, $nombre_soli);
-        $cargo = mysqli_real_escape_string($conn, $cargo);
+        $titulo_proye = $_POST['titulo_proye'];
+        $titulo_soli = $_POST['titulo_soli'];
+        $nro_soli = $_POST['nro_soli'];
+        $nombre_soli = $_POST['nombre_soli'];
+        $cargo = $_POST['cargo'];
+        $descripcion = $_POST['descripcion'];
+        $justificacion = $_POST['justificacion'];
+        $impacto = $_POST['impacto'];
+        $estado_solicitud = $_POST['estado_solicitud'];
+        $responsable = $_POST['responsable'];
+        $comentarios = $_POST['comentarios'];
+        $prioridad = $_POST['prioridad'];
+        $recursos_n = $_POST['recursos_n'];
+        $fecha = $_POST['fecha'];
 
-        // Insertar datos en la tabla 'formularios' con sentencia preparada
-        $sql = "INSERT INTO datos_formulario (tit_pro, tit_soli, nom_soli, car_soli) 
-                VALUES (?, ?, ?, ?)";
+        $conexion->insertar($titulo_proye, $titulo_soli, $nro_soli, $nombre_soli, $cargo, $descripcion, $justificacion, $impacto, $estado_solicitud, $responsable, $comentarios, $prioridad, $recursos_n, $fecha);
 
-        $stmt = $conn->prepare($sql);
-        $stmt->bind_param("ssss", $titulo_proye, $titulo_soli, $nombre_soli, $cargo);
-
-        if ($stmt->execute()) {
-            echo "Datos insertados correctamente";
-        } else {
-            echo "Error al insertar datos: " . $stmt->error;
-        }
-
-        $stmt->close();
+        echo '<script>alert("Campos vacíos. Por favor, complete todos los campos.");</script>';
+        $conexion->cerrarConexion();
     }
-
-    // Cerrar la conexión
-    $conn->close();
 
     // Redirigir al usuario a index.html
     header("Location: index.html");
     exit(); // Asegura que el script se detenga después de la redirección
 }
-?>
