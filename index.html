@@ -23,88 +23,90 @@
         </ul>
     </nav>
 
-      <div id="mensajeBienvenida" style="display: block;"class="mensaje-bienvenida">
-        <h1>¡Bienvenido a nuestra plataforma de solicitud de cambios! Comienza a gestionar tus solicitudes de modificación de manera eficiente y organizada.</h1>
+    <div id="mensajeBienvenida" style="display: block;" class="mensaje-bienvenida">
+        <h1>¡Bienvenido a nuestra plataforma de solicitud de cambios! Comienza a gestionar tus solicitudes de
+            modificación de manera eficiente y organizada.</h1>
     </div>
     <br></br>
 
     <div id="formulario-container" style="display: none;">
-    <form action="procesar_solicitud.php" method="post">
-        <h2>Solicitud de Cambio</h2>
+        <form action="procesar_solicitud.php" method="post">
+            <h2>Solicitud de Cambio</h2>
 
-        <label for="titulo_proye">Titulo del Proyecto:</label>
-        <input type="titulo_proye" id="titulo_proye" name="titulo_proye" required>
+            <label for="titulo_proye">Titulo del Proyecto:</label>
+            <input type="titulo_proye" id="titulo_proye" name="titulo_proye" required>
 
-        <div class="form-group">
-            <label for="titulo_soli">Título de la Solicitud:</label>
-            <input type="text" id="titulo_soli" name="titulo_soli" required>
-        </div>
+            <div class="form-group">
+                <label for="titulo_soli">Título de la Solicitud:</label>
+                <input type="text" id="titulo_soli" name="titulo_soli" required>
+            </div>
 
-        <div class="form-group">
-            <label for="nro_soli">Nro de Solicitud:</label>
-            <input type="text" id="nro_soli" name="nro_soli" required>
-        </div>
-        <br></br>
-        <div class="form-group">
-            <label for="nombre_soli">Nombre del solicitante:</label>
-            <input type="text" id="nombre_soli" name="nombre_soli" required>
-        </div>
+            <div class="form-group">
+                <label for="nro_soli">Nro de Solicitud:</label>
+                <input type="text" id="nro_soli" name="nro_soli" pattern="[0-9]+" title="Ingrese solo números" required>
+            </div>            
 
-        <div class="form-group">
-            <label for="cargo">Cargo o Rol:</label>
-            <input type="text" id="cargo" name="cargo" required>
-        </div>
+            <br></br>
+            <div class="form-group">
+                <label for="nombre_soli">Nombre del solicitante:</label>
+                <input type="text" id="nombre_soli" name="nombre_soli" required>
+            </div>
 
-        <div class="descripcion jf">
-            <p>Descripción del cambio:</p>
-            <input type="text" id="descripcion" name="descripcion" required>
-        </div>
-        <div class="justificacion jf">
-            <p>Justificación del cambio:</p>
-            <input type="text" id="justificacion" name="justificacion" required>
-        </div>
-        <div class="impacto jf">
-            <p>Impacto que tendra:</p>
-            <input type="text" id="impacto" name="impacto" required>
-        </div>
+            <div class="form-group">
+                <label for="cargo">Cargo o Rol:</label>
+                <input type="text" id="cargo" name="cargo" required>
+            </div>
 
-        <label for="prioridad">Prioridad:</label>
+            <div class="descripcion jf">
+                <p>Descripción del cambio:</p>
+                <input type="text" id="descripcion" name="descripcion" required>
+            </div>
+            <div class="justificacion jf">
+                <p>Justificación del cambio:</p>
+                <input type="text" id="justificacion" name="justificacion" required>
+            </div>
+            <div class="impacto jf">
+                <p>Impacto que tendra:</p>
+                <input type="text" id="impacto" name="impacto" required>
+            </div>
 
-        <div>
-            <select name="prioridad" id="prioridad" required class="styled-select">
-                <option value="Alta" style="background-color: rgb(202, 26, 26); ">Alta</option>
-                <option value="Media" style="background-color: rgb(165, 87, 42); ">Media</option>
-                <option value="Baja" style="background-color: rgb(42, 165, 69); ">Baja</option>
+            <label for="prioridad">Prioridad:</label>
+
+            <div>
+                <select name="prioridad" id="prioridad" required class="styled-select">
+                    <option value="Alta" style="background-color: rgb(202, 26, 26); ">Alta</option>
+                    <option value="Media" style="background-color: rgb(165, 87, 42); ">Media</option>
+                    <option value="Baja" style="background-color: rgb(42, 165, 69); ">Baja</option>
+                </select>
+            </div>
+
+            <label for="recursos_n">Recursos Necesarios:</label>
+            <textarea id="recursos_n" name="recursos_n" rows="6" required></textarea>
+
+            <label for="fecha">Fecha propuesta:</label>
+            <input type="date" id="fecha" name="fecha" required>
+
+            <label for="estado_solicitud">Estado del Cambio Solicitado:</label>
+            <select name="estado_solicitud" id="estado_solicitud" required class="styled-select">
+                <option value="pendiente">Pendiente</option>
+                <option value="en proceso">En Proceso</option>
+                <option value="aprobado">Aprobado</option>
+                <option value="rechazado">Rechazado</option>
+                <option value="implementado">Implementado</option>
             </select>
-        </div>
+            <label for="responsable">Responsable de la Solicitud:</label>
+            <input type="text" id="responsable" name="responsable" onkeypress="soloLetras(event)" required>
 
-        <label for="recursos_n">Recursos Necesarios:</label>
-        <textarea id="recursos_n" name="recursos_n" rows="6" required ></textarea>
+            <label for="comentarios">Observaciones y Comentarios:</label>
+            <textarea id="comentarios" name="comentarios" rows="5" required></textarea>
 
-        <label for="fecha">Fecha propuesta:</label>
-        <input type="date" id="fecha" name="fecha" required>
+            <button type="submit">Enviar Solicitud</button>
+        </form>
+    </div>
 
-        <label for="estado_solicitud">Estado del Cambio Solicitado:</label>
-        <select name="estado_solicitud" id="estado_solicitud" required class="styled-select">
-            <option value="pendiente">Pendiente</option>
-            <option value="en proceso">En Proceso</option>
-            <option value="aprobado">Aprobado</option>
-            <option value="rechazado">Rechazado</option>
-            <option value="implementado">Implementado</option>
-        </select>
-        <label for="responsable">Responsable de la Solicitud:</label>
-        <input type="text" id="responsable" name="responsable" onkeypress="soloLetras(event)" required>
-
-        <label for="comentarios">Observaciones y Comentarios:</label>
-        <textarea id="comentarios" name="comentarios" rows="5" required></textarea>
-
-        <button type="submit">Enviar Solicitud</button>
-    </form>
-</div>
-
-<footer class="footer">
-  <p>Todos los derechos reservados © Grupo Nro 3</p>
-</footer>
+    <footer class="footer">
+        <p>Todos los derechos reservados © Grupo Nro 3</p>
+    </footer>
 
 </body>
 
@@ -135,7 +137,7 @@
 
         input.value = newTexto;
     });
-    
+
 </script>
 
 <script>
