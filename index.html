@@ -55,52 +55,31 @@
             <label for="fecha">Fecha propuesta:</label>
             <input type="date" id="fecha" name="fecha" required>
 
-        <label for="prioridad">Prioridad:</label>
-        <div>
-            <button style="background-color: rgb(235, 22, 22); color: black;" type="button" id="alta"
-                value="Alta">Alta</button>
-            <button style="background-color: yellow; color: black;" type="button" id="media"
-                value="Media">Media</button>
-            <button style="background-color: green; color: black;" type="button" id="baja" value="Baja">Baja</button>
-        </div>
+            <label for="prioridad">Prioridad:</label>
+            <div>
+                <button style="background-color: rgb(235, 22, 22); color: black;" type="button" id="alta"
+                    value="Alta">Alta</button>
+                <button style="background-color: yellow; color: black;" type="button" id="media"
+                    value="Media">Media</button>
+                <button style="background-color: green; color: black;" type="button" id="baja" value="Baja">Baja</button>
+            </div>
 
-        <label for="recursos_n">Recursos Necesarios:</label>
-        <textarea id="recursos_n" name="recursos_n" rows="6" required></textarea>
+            <label for="recursos_n">Recursos Necesarios:</label>
+            <textarea id="recursos_n" name="recursos_n" rows="6" required></textarea>
 
-        <label for="estado_solicitud">Estado del Cambio Solicitado:</label>
-        <select name="estado_solicitud" id="estado_solicitud" required class="styled-select">
-            <option value="pendiente">Pendiente</option>
-            <option value="en_proceso">En Proceso</option>
-            <option value="aprobado">Aprobado</option>
-            <option value="rechazado">Rechazado</option>
-            <option value="implementado">Implementado</option>
-        </select> 
-        <label for="responsable">Responsable de la Solicitud:</label>
-        <input type="text" id="responsable" name="responsable" onkeypress="soloLetras(event)">
-            
-        <label for="comentarios">Observaciones y Comentarios:</label>
-        <textarea id="comentarios" name="comentarios" rows="5"></textarea>
-
-
-
-
-
-        <label for="fecha">Fecha propuesta:</label>
-        <input type="date" id="fecha" name="fecha" required>
-            <label for="costo">Costos asociados:</label>
-            <input type="text" id="costo" name="costo">
-
-            <label for="riesgos">Riesgos asociados:</label>
-            <textarea id="riesgos" name="riesgos" rows="4"></textarea>
-
-            <label for="requisitos">Requisitos técnicos:</label>
-            <textarea id="requisitos" name="requisitos" rows="4"></textarea>
-            <label for="validacion">Procedimientos de validación:</label>
-            <textarea id="validacion" name="validacion" rows="4"></textarea>
-            <label for="observaciones">Observaciones adicionales:</label>
-            <textarea id="observaciones" name="observaciones" rows="4"></textarea>
-            <label for="archivo">Adjuntar archivo:</label>
-            <input type="file" id="archivo" name="archivo">
+            <label for="estado_solicitud">Estado del Cambio Solicitado:</label>
+            <select name="estado_solicitud" id="estado_solicitud" required class="styled-select">
+                <option value="pendiente">Pendiente</option>
+                <option value="en_proceso">En Proceso</option>
+                <option value="aprobado">Aprobado</option>
+                <option value="rechazado">Rechazado</option>
+                <option value="implementado">Implementado</option>
+            </select> 
+            <label for="responsable">Responsable de la Solicitud:</label>
+            <input type="text" id="responsable" name="responsable" onkeypress="soloLetras(event)">
+                
+            <label for="comentarios">Observaciones y Comentarios:</label>
+            <textarea id="comentarios" name="comentarios" rows="5"></textarea>
 
             <button type="submit">Enviar Solicitud</button>
         </form>
