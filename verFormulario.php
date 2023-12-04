@@ -41,12 +41,12 @@ if (isset($_GET['parametro'])) {
             </head>
 
             <body>
-                <nav class="navbar"  style="display: inline-flex; width: 98.5%; background-color: #2c497f;margin-bottom: 10px;">
+                <nav class="navbar"  style="display: inline-flex; width: 98.5%; background-color: rgba(255, 255, 255, 0);margin-bottom: 10px;">
                     <ul>
                         <li><button onclick="goBack()">Atrás</button></li>
                     </ul>
                     <ul>
-                        <li><a href="./index.html">Inicio</a></li>
+                        <li><button onclick="window.location.href='./index.html'">Inicio</button></li>
                     </ul>
                 </nav>
                 <div id="formulario-container">

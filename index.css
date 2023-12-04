@@ -1,6 +1,6 @@
 body {
     font-family: Arial, sans-serif;
-    background-color: rgba(255, 255, 255, 0.575);
+    background-color: rgba(141, 196, 196, 0.877);
     margin: 5 px;
     padding: 5 px;
     height: 100vh;
@@ -47,7 +47,7 @@ button:hover {
 h2{
     text-align: center;
     font-family: Arial, Helvetica, sans-serif;
-    color: rgb(50, 50, 189);
+    color: rgb(0, 0, 0);
 }
 
 .form-group {
@@ -149,6 +149,25 @@ header {
     color: black;
     border-radius: 15px; 
 }
+
+.navbar ul li .btn-lista{
+  background-color: #000000;
+  display: block;
+  color: rgb(255, 255, 255) ;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: large;
+  transition: background-color 0.3s, border-radius 0.3s;
+  border-radius: 8px;
+}
+
+.navbar ul li .btn-lista:hover{
+  background-color:rgb(255, 255, 255);
+  color: black;
+  border-radius: 15px; 
+}
+
   .footer {
     background-color: rgb(0, 0, 0); 
     color: white;
@@ -158,14 +177,25 @@ header {
   }
 
   .mensaje-bienvenida {
-    background-color: #f7f7f7;
-    border: 1px solid #ddd;
+    background-image: url(./imagenes/f.png);
+    width: 96%;
+    height: 50%;
     padding: 30px;
     text-align: center;
     margin-top: 30px;
-    border-radius: 12px;
+    border-radius: 20px;
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
     font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
     color: rgb(0, 0, 0);
     line-height: 1.6;
+    background-repeat: no-repeat;
+    background-position-y: center;
+    background-position-x: center;
+}
+
+.mensaje-bienvenida  h1 {
+  background-color: #ffffff8e;
+  box-shadow: 0 0 30px rgb(255, 255, 255);
+  background-position-y: center;
+  background-position-x: center;
 }

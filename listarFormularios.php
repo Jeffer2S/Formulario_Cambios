@@ -15,7 +15,7 @@
 <body>
 <nav class="navbar">
         <ul>
-            <li><a href="./index.html">Inicio</a></li>
+            <li><button class="btn-lista" onclick="window.location.href='./index.html'">Inicio</button></li>
         </ul>
     </nav>
     <h2 class="titulo">Formularios</h2>
@@ -31,7 +31,7 @@
                 <h2 class="txtformulario1">Nombre de Solicitud</h2>
             </div>
             <div class="contbutton">
-                <h2 class="txtformulario1"></h2>
+                <h2 class="txtformulario1">Vista</h2>
             </div>
         </section>
     <?php

@@ -19,8 +19,8 @@
             <li><a href="./index.html">Inicio</a></li>
             <li><a href="#" id="crearFormulario">Crear Nuevo Formulario</a></li>
             <li><a href="./mostrarFormularios.php">Modificar Formulario</a></li>
-            <li><a href="./eliminarFormularios.php" target="_blank">Eliminar Formulario</a></li>
-            <li><a href="./listarFormularios.php" target="_blank">Listar Formularios</a></li>
+            <li><button class="btn-lista" onclick="window.location.href='./eliminarFormularios.php'">Eliminar Formulario</button></li>
+            <li><button class="btn-lista" onclick="window.location.href='./listarFormularios.php'">Lista de Formulario</button></li>
         </ul>
     </nav>
 
@@ -32,7 +32,7 @@
 
     <div id="formulario-container" style="display: none;">
         <form action="procesar_solicitud.php" method="post">
-            <h2>Solicitud de Cambio</h2>
+            <h2>Nueva Solicitud de Cambio</h2>
 
             <label for="titulo_proye">Titulo del Proyecto:</label>
             <input type="titulo_proye" id="titulo_proye" name="titulo_proye" required>

@@ -36,7 +36,7 @@ if (isset($_GET['parametro'])) {
             <head>
                 <meta charset="UTF-8">
                 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-                <title>Solicitud de Cambio</title>
+                <title> Editar Solicitud</title>
                 <link rel="stylesheet" href="./index.css">
             </head>
 
@@ -52,7 +52,7 @@ if (isset($_GET['parametro'])) {
                 </nav>
                 <div id="formulario-container">
                     <form action="update.php" method="post">
-                        <h2>Solicitud de Cambio</h2>
+                        <h2>Editar Solicitud de Cambio</h2>
                         <label for="titulo_proye">Titulo del Proyecto:</label>
                         <input type="text" id="titulo_proye" name="titulo_proye" value="<?php echo $tit_pro?>" required>
 

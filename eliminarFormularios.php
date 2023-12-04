@@ -60,12 +60,13 @@
         }
 
         .navbar {
-            background-color: #2c497f;
+            display: inline-block;
             text-align: center;
             border-radius: 5px;
             font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
             color: rgb(0, 0, 0);
             font-size: x-large;
+            margin-bottom: 10px;
         }
 
         .navbar ul {
@@ -97,13 +98,26 @@
             color: black;
             border-radius: 15px;
         }
+
+        button {
+            background-color: #208d23;
+            color: #fff;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #000000;
+        }
     </style>
 </head>
 
 <body>
-    <nav class="navbar" style=" width: 100%; background-color: #2c497f;margin-bottom: 10px;">
+    <nav class="navbar">
         <ul>
-            <li><a href="./index.html">Inicio</a></li>
+            <li><button onclick="window.location.href='./index.html'">Inicio</button></li>
         </ul>
     </nav>
     <?php
