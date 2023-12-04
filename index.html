@@ -50,8 +50,9 @@
             <br></br>
             <div class="form-group">
                 <label for="nombre_soli">Nombre del solicitante:</label>
-                <input type="text" id="nombre_soli" name="nombre_soli" required>
+                <input type="text" id="nombre_soli" name="nombre_soli" pattern="[A-Za-záéíóúÁÉÍÓÚñÑ\s]+" title="Ingrese solo letras" required>
             </div>
+            
 
             <div class="form-group">
                 <label for="cargo">Cargo o Rol:</label>

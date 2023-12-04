@@ -67,7 +67,7 @@ if (isset($_GET['parametro'])) {
                         <br></br>
                         <div class="form-group">
                             <label for="nombre_soli">Nombre del solicitante:</label>
-                            <input type="text" id="nombre_soli" name="nombre_soli" value="<?php echo $nom_sol?>" required>
+                            <input type="text" id="nombre_soli" name="nombre_soli" onkeypress="soloLetras(event)" value="<?php echo $nom_sol?>" required>
                         </div>
 
                         <div class="form-group">
