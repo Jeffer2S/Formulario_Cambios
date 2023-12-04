@@ -52,6 +52,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         }
     }
 } else {
-    echo "Acceso no autorizado";
+    // Redirigir al usuario a index.html
+    header("Location: index.html");
+    exit(); // Asegura que el script se detenga después de la redirección
 }
 ?>
