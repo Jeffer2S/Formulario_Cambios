@@ -63,7 +63,7 @@ if (isset($_GET['parametro'])) {
 
                         <div class="form-group">
                             <label for="nro_soli">Nro de Solicitud:</label>
-                            <input type="text" id="nro_soli" name="nro_soli" value="<?php echo $num_soli?>" pattern="[0-9]+" title="Ingrese solo números" disabled>
+                            <input type="text" id="nro_soli" name="nro_soli" value="<?php echo $num_soli?>" pattern="[0-9]+" title="Ingrese solo números" required>
                         </div>            
 
                         <br></br>
