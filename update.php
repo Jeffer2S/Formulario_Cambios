@@ -51,9 +51,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             echo "Error al actualizar el registro: " . mysqli_error($conn);
         }
     }
-} else {
-    // Redirigir al usuario a index.html
+     // Redirigir al usuario a index.html
     header("Location: index.html");
-    exit(); // Asegura que el script se detenga después de la redirección
-}
+     exit(); // Asegura que el script se detenga después de la redirección
+} 
+
 ?>
