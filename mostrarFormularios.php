@@ -36,7 +36,7 @@
         </section>
     <?php
     require 'conexion.php';
-    $conexion = new Conexion("localhost:33065", "root", "", "formulario");
+    $conexion = new Conexion("localhost", "root", "", "formulario");
     $conexion->conectar();
     $conn = $conexion->obtenerConexion();
     if ($conn){

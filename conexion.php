@@ -46,4 +46,17 @@ class Conexion
             echo "Error al insertar datos: " . $this->conn->error;
         }
     }
+
+    public function obtenerDatos()
+    {
+        $sql = "SELECT * FROM datos_formulario";
+        $resultado = $this->conn->query($sql);
+        $datos = array();
+        if ($resultado->num_rows > 0) {
+            while ($row = $resultado->fetch_assoc()) {
+                $datos[] = $row;
+            }
+        }
+        return $datos;
+    }
 }
