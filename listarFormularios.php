@@ -1,157 +1,86 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <style>
-        body {
-            background-color: rgb(141, 196, 196);
-            font-family: sans-serif;
-        }
-
-        .tabla-responsive {
-            width: 100%;
-        }
-
-        table {
-            white-space: wrap;
-            width: 100%;
-            border-collapse: collapse;
-            border: 2px solid #000;
-        }
-
-        td {
-            border: 1px solid #000;
-        }
-
-        th,
-        td {
-            padding: 8px;
-            text-align: left;
-        }
-
-        th {
-            text-align: center;
-            background-color: greenyellow;
-            border: 1px solid #000;
-        }
-
-        tr {
-            overflow-anchor: none;
-        }
-
-        tr:hover {
-            background-color: burlywood;
-        }
-
-        .Eliminar {
-            text-decoration: none;
-            color: #000;
-            background-color: #9381ff;
-            padding: 4px;
-            border-radius: 5px;
-        }
-
-        .Eliminar:hover {
-            color: #fff;
-            background-color: #a31621;
-        }
-    </style>
+    <title>Solicitudes Realizadas</title>
+    <link rel="stylesheet" href="./listarFormularios.css">
 </head>
 
+<header>
+    <img src="./imagenes/banner1.jpg" alt="Banner 1">
+</header>
+
 <body>
+<nav class="navbar">
+        <ul>
+            <li><a href="./index.html">Inicio</a></li>
+        </ul>
+    </nav>
+    <h2 class="titulo">Formularios</h2>
+    <div class="container">
+        <section>
+            <div class="contformulario">
+                <h2 class="txtformulario1">Número de Solicitud</h2>
+            </div>
+            <div class="contformulario">
+                <h2 class="txtformulario1">Proyecto</h2>
+            </div>
+            <div class="contformulario">
+                <h2 class="txtformulario1">Nombre de Solicitud</h2>
+            </div>
+            <div class="contbutton">
+                <h2 class="txtformulario1"></h2>
+            </div>
+        </section>
     <?php
     require 'conexion.php';
-
-    // Conectar a la base de datos
     $conexion = new Conexion("localhost", "root", "", "formulario");
     $conexion->conectar();
     $conn = $conexion->obtenerConexion();
-
-    // Llamar al método obtenerDatos()
-    $datos = $conexion->obtenerDatos();
-    $conexion->cerrarConexion();
-
-    echo '<div class="tabla-responsive">';
-    echo '<table id="table">';
-    echo '<tr name="tr">';
-    echo '<th>N° Formulario</th>';
-    echo '<th>Titulo Proyecto</th>';
-    echo '<th>Título Solicitud</th>';
-    echo '<th>N° Solicitud</th>';
-    echo '<th>Nombre del solicitante</th>';
-    echo '<th>Cargo o Rol</th>';
-    echo '<th>Descripción del cambio</th>';
-    echo '<th>Justificación del cambio</th>';
-    echo '<th>Impacto que tendra</th>';
-    echo '<th>Prioridad</th>';
-    echo '<th>Recursos Necesarios</th>';
-    echo '<th>Fecha propuesta</th>';
-    echo '<th>Estado del Cambio</th>';
-    echo '<th>Responsable de Solicitud</th>';
-    echo '<th>Observaciones y Comentarios</th>';
-    echo '<th>Acciones</th>';
-    echo '</tr>';
-
-
-    // Recorrer los datos y generar las filas de la tabla
-    foreach ($datos as $dato) {
-        echo '<tr name="tr">';
-        echo '<td name="td">' . $dato['num_for'] . '</td>';
-        echo '<td name="td">' . $dato['tit_pro'] . '</td>';
-        echo '<td name="td">' . $dato['tit_soli'] . '</td>';
-        echo '<td name="td">' . $dato['nro_soli'] . '</td>';
-        echo '<td name="td">' . $dato['nom_soli'] . '</td>';
-        echo '<td name="td">' . $dato['car_soli'] . '</td>';
-        echo '<td name="td">' . $dato['des_soli'] . '</td>';
-        echo '<td name="td">' . $dato['jus_soli'] . '</td>';
-        echo '<td name="td">' . $dato['imp_soli'] . '</td>';
-        echo '<td name="td">' . $dato['est_soli'] . '</td>';
-        echo '<td name="td">' . $dato['res_soli'] . '</td>';
-        echo '<td name="td">' . $dato['com_soli'] . '</td>';
-        echo '<td name="td">' . $dato['pri_soli'] . '</td>';
-        echo '<td name="td">' . $dato['rec_nec_soli'] . '</td>';
-        echo '<td name="td">' . $dato['fec_pro_soli'] . '</td>';
-
-        // Agregar  eliminar en cada fila
-        echo '<td><a href="?eliminar=' . $dato['num_for'] . '"class="Eliminar">Eliminar</a></td>';
-
-        echo '</tr>';
-    }
-    echo '</table>';
-    echo '</div>';
-
-    function eliminarFila($idEliminar)
-    {
-        $conexion = new Conexion("localhost", "root", "", "formulario");
-        $conexion->conectar();
-        $conn = $conexion->obtenerConexion();
-
-        // Eliminar la fila correspondiente al ID
-        $sql = "DELETE FROM datos_formulario WHERE num_for = $idEliminar";
-        $resultado = $conn->query($sql);
-
-        if ($resultado) {
-            echo "Fila eliminada correctamente.";
-        } else {
-            echo "Error al eliminar la fila: " . $conn->error;
+    if ($conn){
+        $sql= "SELECT tit_pro, tit_soli, nro_soli, num_for FROM datos_formulario";
+        $result = mysqli_query($conn,$sql);
+        if ($result){
+            while ($row = $result->fetch_array()) {
+                $proy=$row['tit_pro'];
+                $solic=$row['tit_soli'];
+                $numero=$row['nro_soli'];
+                $numeroFor=$row['num_for'];
+            ?> 
+            
+            <section>
+                <div class="contformulario">
+                    <h2 class="txtformulario "><?php echo $numero?></h2>
+                </div>
+                <div class="contformulario">
+                    <h2 class="txtformulario"><?php echo $proy?></h2>
+                </div>
+                <div class="contformulario">
+                    <h2 class="txtformulario"><?php echo $solic?></h2>
+                </div>
+                <div class="contbutton">
+                <button type="submit"  onclick="editarFormulario(<?php echo $numeroFor?>)">Ver</button>
+                </div>
+            </section>
+            <?php
+            }
         }
-
-        $conexion->cerrarConexion();
-        // Redirigir a la página actual
-        header('Location: ' . $_SERVER['PHP_SELF']);
-    }
-
-    // Obtener el parámetro de eliminación
-    if (isset($_GET['eliminar'])) {
-        $idEliminar = $_GET['eliminar'];
-        eliminarFila($idEliminar);
-    }
-
+    } 
     ?>
-
+    </div>
+    
+    <footer class="footer">
+        <p>Todos los derechos reservados © Grupo Nro 3</p>
+    </footer>
 </body>
 
+<script>
+    function editarFormulario(parametro) {
+        console.log(parametro);
+        window.location.href = 'verFormulario.php?parametro=' + parametro;
+    }
+</script>
+    
 </html>
