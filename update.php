@@ -1,4 +1,12 @@
 <?php
+
+require 'conexion.php';
+
+    // Conecta a la base de datos
+    $conexion = new Conexion("localhost", "root", "", "formulario");
+    $conexion->conectar();
+    $conn = $conexion->obtenerConexion();
+
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Validar y sanar los datos
     $tit_pro = mysqli_real_escape_string($conn, $_POST["titulo_proye"]);
@@ -16,13 +24,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $res_sol = mysqli_real_escape_string($conn, $_POST["responsable"]);
     $com_sol = mysqli_real_escape_string($conn, $_POST["comentarios"]);
 
-    // Incluye el archivo de conexión
-    require 'conexion.php';
 
-    // Conecta a la base de datos
-    $conexion = new Conexion("localhost", "root", "", "formulario");
-    $conexion->conectar();
-    $conn = $conexion->obtenerConexion();
 
     if ($conn) {
         // Actualiza el registro en la base de datos
