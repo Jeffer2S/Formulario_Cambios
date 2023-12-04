@@ -7,10 +7,12 @@ if (isset($_GET['parametro'])) {
     $conexion = new Conexion("localhost", "root", "", "formulario");
     $conexion->conectar();
     $conn = $conexion->obtenerConexion();
-    if ($conn){
-        $sql= "SELECT * FROM datos_formulario WHERE num_for=$id";
-        $result = mysqli_query($conn,$sql);
-        if ($result){
+
+    if ($conn) {
+        $sql = "SELECT * FROM datos_formulario WHERE num_for = $id";
+        $result = mysqli_query($conn, $sql);
+
+        if ($result) {
             $row = $result->fetch_assoc();
             $id = $row["num_for"];
             $tit_pro = $row["tit_pro"];
@@ -106,18 +108,20 @@ if (isset($_GET['parametro'])) {
 
                         <label for="estado_solicitud">Estado del Cambio Solicitado:</label>
                         <select name="estado_solicitud" id="estado_solicitud" required class="styled-select">
-                            <option value="pendiente">Pendiente</option>
-                            <option value="en proceso">En Proceso</option>
-                            <option value="aprobado">Aprobado</option>
-                            <option value="rechazado">Rechazado</option>
-                            <option value="implementado">Implementado</option>
+                            <option value="pendiente" <?php if($est_sol == 'pendiente') echo 'selected'; ?>>Pendiente</option>
+                            <option value="en proceso" <?php if($est_sol == 'en proceso') echo 'selected'; ?>>En Proceso</option>
+                            <option value="aprobado" <?php if($est_sol == 'aprobado') echo 'selected'; ?>>Aprobado</option>
+                            <option value="rechazado" <?php if($est_sol == 'rechazado') echo 'selected'; ?>>Rechazado</option>
+                            <option value="implementado" <?php if($est_sol == 'implementado') echo 'selected'; ?>>Implementado</option>
                         </select>
+
                         <label for="responsable">Responsable de la Solicitud:</label>
                         <input type="text" id="responsable" name="responsable" onkeypress="soloLetras(event)" value="<?php echo $res_sol?>" required>
 
                         <label for="comentarios">Observaciones y Comentarios:</label>
                         <textarea id="comentarios" name="comentarios" rows="5" required><?php echo $com_sol?></textarea>
 
+                        <input type="hidden" name="id" value="<?php echo $id; ?>">
                         <button type="submit">Enviar Solicitud</button>
                     </form>
                 </div>
@@ -156,10 +160,10 @@ if (isset($_GET['parametro'])) {
                 });
 
             </script>
+            </html>
             <?php
         }
     }
 } else {
-    
 }
 ?>
